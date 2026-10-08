@@ -5,6 +5,7 @@ export type ProductDocument = {
   slug: string;
   price: number;
   description: string;
+  image: string;
 };
 
 const productSchema = new Schema<ProductDocument>(
@@ -26,6 +27,12 @@ const productSchema = new Schema<ProductDocument>(
       type: Number,
       required: true,
       min: 0,
+    },
+
+    image: {
+      type: String,
+      required: true,
+      trim: true,
     },
 
     description: {
